@@ -2,7 +2,7 @@
 layout: post
 title:  "Tekton - Cloud Native CI/CD"
 date:   2022-01-10 13:32:49 +0100
-categories: jekyll update
+categories: tekton
 ---
 # Tekton CI/CD
 
@@ -22,7 +22,7 @@ Tekton jest to narzędzie pozwalające na tworzenie pipelinów w środowisku clo
 
 **Skalowalność.** By zwiększyć możliwości robocze Tektona konieczne jest jedynie dodanie kolejnych nodów do klastra. Żadna dodatkowa operacja nie jest wymagana.
 
-![Gitlab](/images/Tekton1/gitlab1.png)
+![Gitlab](/images/Tekton/Tekton1/gitlab1.png)
 
 A jak widać powyżej, ta skalowalność nie jest bez znaczenia.
 
@@ -38,11 +38,11 @@ Jeśli organizacja posiada wdrożonego Kubernetesa i wszelkie repozytoria kodu n
 
 Ponieważ to one w mojej opinii mogą przynieść najlepszy developer experience zwłaszcza w kombinacji **repozytorium kodu + CI/CD** w ramach tej samej platformy.
 
-Przygotowując się do pisania tego artykułu, starałem się dowiedzieć jak najwięcej na temat Tekton i spotkałem kilka opinii nt. tego narzędzia, że jest ono bardzo elastyczne i pozwala na stworzenie wielu rozwiązań ale przy tym jest ono skomplikowane , co może odstraszyć i raczej odradza się wdrażanie samego Tektona.
+Przygotowując się do pisania tego artykułu, starałem się dowiedzieć jak najwięcej na temat Tekton i spotkałem kilka opinii nt. tego narzędzia, że jest ono bardzo elastyczne i pozwala na stworzenie wielu rozwiązań ale przy tym jest ono skomplikowane, co może odstraszyć i raczej odradza się wdrażanie samego Tektona.
 
 
 
-![Źródło: octopus.com](/images/Tekton1/octopus.png)
+![Źródło: octopus.com](/images/Tekton/Tekton1/octopus.png)
 
 Źródło: octopus.com
 
@@ -79,7 +79,7 @@ kubectl get namespace
 
 Powinna pokazać na liście **tekton-pipelines**
 
-![Tekton Pipelines](/images/Tekton1/tekton-pipelines.png)
+![Tekton Pipelines](/images/Tekton/Tekton1/tekton-pipelines.png)
 
 Dodatkowo możemy zweryfikować czy pody są w statusie **Running**
 
@@ -123,7 +123,7 @@ Teraz mamy już wszystko gotowe by móc eksperymentować z **Tekton!**
 
 # Pierwszy Task
 
-Teraz pozostaje tylko sprawdzić czy wszystko działa, w tym celu utworzymy pierwszy prosty **Task.**
+Teraz pozostaje tylko sprawdzić, czy wszystko działa, w tym celu utworzymy pierwszy prosty **Task.**
 
 ```yml
 apiVersion: tekton.dev/v1beta1
@@ -143,7 +143,7 @@ spec:
 Powyższy fragment kodu zapisujemy jako plik **task-hello.yaml** a następnie tworzymy zasób wykonując
 
 ```bash
-kubectl apply -f task-hello.yaml
+kubectl apply -f task-hello.yml
 ```
 
 Utworzony został nowy zasób o nazwie **hello** by to zweryfikować możemy wykonać
@@ -152,7 +152,7 @@ Utworzony został nowy zasób o nazwie **hello** by to zweryfikować możemy wyk
 kubectl get tasks
 ```
 
-![Tasks](/images/Tekton1/tasks.png)
+![Tasks](/images/Tekton/Tekton1/tasks.png)
 
 Teraz pozostaje tylko uruchomić **Task**
 
@@ -168,13 +168,13 @@ tkn taskrun logs --last -f
 
 Rezultat
 
-![Hello](/images/Tekton1/hello.png)
+![Hello](/images/Tekton/Tekton1/hello.png)
 
 Jak widać, wszystko działa!
 
 # Podsumowanie
 
-W tym artykule dowiedzieliśmy się kilku podstawowych informacji nt. Tekton takich jak:
+W tym artykule, dowiedzieliśmy się kilku podstawowych informacji nt. Tekton takich jak:
 
 - Czym jest Tekton
 - Jak zainstalować Tekton Pipelines
