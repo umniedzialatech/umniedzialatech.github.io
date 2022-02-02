@@ -4,12 +4,7 @@ title:  "Tekton - Cloud Native CI/CD"
 date:   2022-01-10 13:32:49 +0100
 categories: tekton
 ---
-# Tekton CI/CD
-
-W tym artykule postaram się przedstawić, czym jest i jak można wykorzystać Tekton.
-
-# Czym jest Tekton?
-
+{% include toc %}
 Tekton jest to narzędzie pozwalające na tworzenie pipelinów w środowisku cloud-native. Tekton funkcjonuje w środowisku Kubernetesowym. Bazuje na Kubernetes Custom Resource czyli na funkcjonalności pozwalającej na rozszerzenie możliwości istniejącego już Kubernetes API.
 
 # Co jest największą zaletą Tekton?
@@ -174,7 +169,7 @@ Jak widać, wszystko działa!
 
 # Podsumowanie
 
-W tym artykule, dowiedzieliśmy się kilku podstawowych informacji nt. Tekton takich jak:
+W tym artykule dowiedzieliśmy się kilku podstawowych informacji nt. Tekton takich jak:
 
 - Czym jest Tekton
 - Jak zainstalować Tekton Pipelines
@@ -186,3 +181,10 @@ W kolejnym artykule poznamy:
 - Podstawowe zasoby dostępne w ramach Tekton Pipelines
 - Stworzymy pierwszy **Tekton Pipeline**
 - Zainstalujemy dodatkowe komponenty
+
+Kod **task-hello.yml** dostępny jest również na [GitHub](https://github.com/umniedzialatech/tekton/tree/master/tekton1).
+
+## Źródła
+
+- [https://tekton.dev/](https://tekton.dev/)
+- [https://hub.tekton.dev/](https://hub.tekton.dev/)
