@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Wprowadzenie do open telemetry"
+date:   2021-01-09 15:00:00 +0100
+categories: Opentelemetry
+---
+
 Jednym z możliwych podejść przy tworzeniu dzisiejszych architektur systemów informatycznych jest podziałał funkcjonalności na mikrousługi. Takie podejście oprócz zalet niesie ze sobą także wyzwania. Jednym z koniecznych podejść do zastosowania w takiej architekturze jest obserwowalność czyli raportowanie wewnętrznego stanu aplikacji na zewnątrz. Można to osiągnąć za pomocą takich wzorców jak:
 
 - Zbieranie logów (Log aggregation) - każda usługa generuje logi, a następnie te logi są wysyłane do scentralizowanego systemu, który upraszcza ich przeglądanie w poszukiwaniu problemów. Przykłady narzędzi: Graylog, Logstash
