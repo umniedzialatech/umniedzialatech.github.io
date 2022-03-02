@@ -1,4 +1,6 @@
-- title: Categories
+- title: Strona Główna
+  url: /
+- title: Kategorie
   url: /categories/
-- title: Search
+- title: Wyszukaj
   url: /search/
