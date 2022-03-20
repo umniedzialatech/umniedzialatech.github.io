@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Wprowadzenie do open telemetry"
-date:   2021-01-09 15:00:00 +0100
-categories: Opentelemetry
+date:   2022-01-09 15:00:00 +0100
+categories: opentelemetry
 ---
 
 Jednym z możliwych podejść przy tworzeniu dzisiejszych architektur systemów informatycznych jest podziałał funkcjonalności na mikrousługi. Takie podejście oprócz zalet niesie ze sobą także wyzwania. Jednym z koniecznych podejść do zastosowania w takiej architekturze jest obserwowalność czyli raportowanie wewnętrznego stanu aplikacji na zewnątrz. Można to osiągnąć za pomocą takich wzorców jak:
@@ -14,12 +14,14 @@ Jednym z możliwych podejść przy tworzeniu dzisiejszych architektur systemów 
     - Pull - Usługa agregująca metryki pobieranie metryki z mikroserwisu.  
 
     **Przykłady narzędzi: Prometheus, Grafana, SigNoz**
-- Rozproszone sledzenie (Distributed tracing) - śledzenie ruchu pomiedzy usługami dzięki czemu czemu można zorientować się czy komunikacja pomiedzy usługami nie trwa za długo. Implementacja tego podejścia odbywa się poprzez przydzielenie unikalnego indetyfikatora zapytania (trace id), a nastepnie przesyłanie go pomiedzy serwisami. Samo zbieranie ruchu najcześciej nie odpowie nia pytanie dlaczego aplikacja spowolniła, od tego służą metryki i logi.  
-    **Przykłady narzędzi: Jaeger, Zipkin**
+
+- Rozproszone sledzenie (Distributed tracing) - śledzenie ruchu pomiedzy usługami dzięki czemu czemu można zorientować się czy komunikacja pomiedzy usługami nie trwa za długo. Implementacja tego podejścia odbywa się poprzez przydzielenie unikalnego indetyfikatora zapytania (trace id), a nastepnie przesyłanie go pomiedzy serwisami. Samo zbieranie ruchu najcześciej nie odpowie nia pytanie dlaczego aplikacja spowolniła, od tego służą metryki i logi.
+**Przykłady narzędzi: Jaeger, Zipkin**
+
 - Health check - podejście w którym mikroserwis raportuje swój stan. W momencie, kiedy wystąpi jakikolwiek problem, aplikacja przechodzi w stan failed i requesty nie są kierowane w strone mikroserwisu, który ma problem.   
     **Przykłady narzędzi: Actuator**
 
-Do zastosowania tych wzorców jest przynajmniej kilka różnych narzędzi i wymagają one innej konfiguracji, w szczególności po stronie klienta (mikroserwisu) wysyłającego informacje do serwera. Mnogość różnych rozwiązań może powodować problemy z utrzymywaniem konfiguracji dlatego przy tym problemie można rozwazyć OpenTelemetry. Jest to zbiór narzędzi, API i SDK służących do zbierania danych telemetrycznych takich jak metryki, logi i traces. Projekt powstał z powodu braku standaryzacji w tym obszarze, wiele różnych rozwiązań powodowało problemy z utrzymywaniem konfiguracji dla poszczególnych usług. Co ważne, OpenTelemtry nie ogranicza się tylko do samej Javy a także inne jezyki są też wspierane. Może to być istotne dla organizacji, które robią mikroserwisy w różnych językach programowania i ekosystemach.
+Do zaimplementowania tych wzorców jest przynajmniej kilka różnych narzędzi i wymagają one innej konfiguracji, w szczególności po stronie klienta (mikroserwisu) wysyłającego informacje do serwera. Mnogość różnych rozwiązań może powodować problemy z utrzymywaniem konfiguracji dlatego przy tym problemie można rozwazyć OpenTelemetry. Jest to zbiór narzędzi, API i SDK służących do zbierania danych telemetrycznych takich jak metryki, logi i traces. Projekt powstał z powodu braku standaryzacji w tym obszarze, wiele różnych rozwiązań powodowało problemy z utrzymywaniem konfiguracji dla poszczególnych usług. Co ważne, OpenTelemtry nie ogranicza się tylko do samej Javy a także inne jezyki są przez to wspierane. Może to być istotne dla organizacji, które robią mikroserwisy w różnych językach programowania i ekosystemach.
 
 ## Status Specyfikacji Open Telemetry
 
@@ -34,7 +36,7 @@ Open Telemetry wspiera następujące wzroce obserwowalności.
 
 W powyżej tabeli widać, że każdy z wzorców znajduje się na innym etapie rozwoju i tak naprawde jedynie Tracing jest w statusie stabilinym. Wiecej informacji dostępnych jest pod tym linkiem: [https://opentelemetry.io/status/](https://opentelemetry.io/status/)
 
-## Zbieranie danych z OpenTelemtry.
+## Zbieranie danych z OpenTelemtry
 
 W przypadku Javy, OpenTelemtry wykorzystuje "OpenTelemetry Java Agent" do zbierania informacji. Najprostrzy sposób aby połączyć java agenta ze swoją aplikacja jest nastepujacy:
 
