@@ -4,14 +4,18 @@ title:  "Połączenie Spring Boot, Open Telemetry i Prometheus"
 date:   2022-03-19 16:00:00 +0100
 categories: opentelemetry
 ---
+{% include toc %}
+Oprócz połączenia z Jaegerem, Open Telemetry można też wykorzystać do integracji z Prometheusem. Co do zasady jednak, ta integracja będzie przebiegać troche inaczej, ponieważ w przypadku Jaegera dane były wysyłane od agenta do usługi. W przypadku Prometheusa, to on będzie pobierać metryki z wystawionego endpointu.
 
-Oprócz połączenia z Jaegerem, Open Telemetry można też wykorzystać do integracji z Prometheusem. Co do zasady jednak, ta integracja będzie przebiegać troche inaczej, ponieważ w przypadku Jaegera dane były wysyłane od agenta do usługi. W przypadku Prometheusa, to on będzie pobierać metryki z wystawionego endpointu.  Plan na ten artykuł wygląda następująco:
+Plan na ten artykuł wygląda następująco:
 
 1) Najpierw skonfigurujemy naszą aplikacje Spring Boot aby wystawiła endpoint do pobrania danych przez Prometheus
 
 2) Pobierzemy i skonfigurujemy Prometheusa aby pobrać logi z wcześniej wystawionego endpointu, a następnie wykorzystamy Grafane do wizualizacji tych danych.
 
 3) Na samym końcu sprawdzimy alternatywne sposoby integracji Spring Boot z Jaegerem i Prometheusem.
+
+# Uruchamianie expoertera Prometheusa w aplikacji Spring Boot
 
  Dla przypomnienia, poprzednio do integracji z Jaegerem wykorzystałem następującą komende: 
 
@@ -101,6 +105,8 @@ Tym sposobem zakończyłem pierwszą cześć - konfiguracje agenta Open Telemetr
 
 Kolejnym punktem na naszej liście jest pobranie Prometheusa i jego konfiguracja. Jest na to kilka sposobów:
 
+# Uruchamianie Prometheusa
+
 - Można pobrać Prometheusa bezpośrednio ze strony [https://prometheus.io/download/](https://prometheus.io/download/)
 - Można użyć obrazu kilku obrazów dockera (Prometheus, Grafana, Alertmanager) połącznych za pomocą docker-compose.yml w jedno środowisko. W tym przypadku, najlepiej byłoby zrobić tak, że nasz aplikacja też podpięta pod ten docker-compose.yml.
 
@@ -122,11 +128,13 @@ Dzięki temu połączeniu, można zacząć monitorować dane z naszego eksporter
 
 Gdy zależy nam na dobrym zwizualizowaniu danych i stworzeniu dashboardów należy użyć Grafny, której jako źródło danych można ustawić Prometheusa. 
 
+# Co innego jak nie OpenTelemetry?
+
 Na samym końcu obiecalem przyjrzec sie jeszcze jakie są jeszcze inne sposoby integracji z Prometheusem i Jaegerem. 
 
 Sam Spring Boot oferuje ujednolicony sposób zbierania i wystawiania metryk przez Actuatora. Żeby z tego skorzystać należy dodać zależność do naszego pom.xml (lub do odopowiedniego pliku dla Gradle)
 
-```bash
+```xml
 <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
@@ -137,7 +145,7 @@ Od tego momentu, niektóre z metryk naszej aplikacji będą dostępne pod adrese
 
  
 
-```bash
+```xml
 <dependency>
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-registry-prometheus</artifactId>

@@ -4,14 +4,18 @@ title:  "Spring Boot z Jaeger przy pomocy OpenTelemetry"
 date:   2022-03-19 15:00:00 +0100
 categories: opentelemetry
 ---
-
+{% include toc %}
 Do stworzenie projektu wykorzystam Spring Boota i w pierwszej kolejności narzędzie Jaeger. Najpierw jednak wyjasnie podstawowe koncepcje, które posłużą jako baza do dalszych rozważań. 
+
+# Wprowadzenie do distributed tracing
 
 Span - zawiera się w Trace i reprezentuje pojedyncza operacje w systemie rozproszonym. Zawiera nazwe, czas początku i końca, SpanContext i zestaw dodatkowych atrybutów. 
 
 Trace - agreguje wiele Spans, które tworzą  w całości biznesową operacje. Zaczyna się od głównego spana a następnie ten moze posiadać pod sobą kolejne reprezentujace kolejne pojedyńcze operacje. 
 
 Wsród narzędzi, które można było wykorzystać do zbierania informacji o komunikacji pomiedzy serwisami jest Zipkin i Jaeger. Architektura obu rozwiązań jest bardzo podobna. Ja zdecydowałem się na wykorzystanie Jaeger, ponieważ chciałem poznać to narzędzie. 
+
+# Jaeger
 
 Na samym początku potrzebny jest serwer Jaeger. Ja wykorzystam obraz dockera all-in-one, perfekcyjny dla debugowania i developmentu. Można uruchomić go komendą:
 
@@ -30,7 +34,12 @@ docker run -d --name jaeger \
 
 ```
 
-Aby upewnić się, że serwer jest już gotowy, można spróbować podłączyć się pod UI, który jest dostępny pod adresem [http://localhost:16686](http://localhost:16686/).  Gdy wszystko jest w porzadku, można przejsć do następnego kroku którym jest stworzenie kilku aplikacji Spring Boot komunikujących się ze sobą. Ja żeby sobie uprościć zadanie, zdecydowałem się na stworzenie jednej aplikacji, która będzie miała możliwość przekierowania pod następny adres ustawiony w application.properties. Cała implementacja znajduje się w ForwardController.
+Aby upewnić się, że serwer jest już gotowy, można spróbować podłączyć się pod UI, który jest dostępny pod adresem [http://localhost:16686](http://localhost:16686/).  Gdy wszystko jest w porzadku, można przejsć do następnego kroku którym jest stworzenie kilku aplikacji Spring Boot komunikujących się ze sobą. 
+
+
+# Generowanie ruchu z pomocą aplikacji Spring Boot 
+
+Ja żeby sobie uprościć zadanie, zdecydowałem się na stworzenie jednej aplikacji, która będzie miała możliwość przekierowania pod następny adres ustawiony w application.properties. Cała implementacja znajduje się w ForwardController.
 
 ```java
 @RestController
