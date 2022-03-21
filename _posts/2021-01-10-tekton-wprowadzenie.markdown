@@ -21,7 +21,7 @@ Tekton jest to narzędzie pozwalające na tworzenie pipelinów w środowisku clo
 
 **Skalowalność.** By zwiększyć możliwości robocze Tektona konieczne jest jedynie dodanie kolejnych nodów do klastra. Żadna dodatkowa operacja nie jest wymagana.
 
-![Gitlab](/images/Tekton/Tekton1/gitlab1.png)
+![Gitlab](/images/Tekton/1/gitlab1.png)
 
 A jak widać powyżej, ta skalowalność nie jest bez znaczenia.
 
@@ -41,7 +41,7 @@ Przygotowując się do pisania tego artykułu, starałem się dowiedzieć jak na
 
 
 
-![Źródło: octopus.com](/images/Tekton/Tekton1/octopus.png)
+![Źródło: octopus.com](/images/Tekton/1/octopus.png)
 
 Źródło: octopus.com
 
@@ -78,7 +78,7 @@ kubectl get namespace
 
 Powinna pokazać na liście **tekton-pipelines**
 
-![Tekton Pipelines](/images/Tekton/Tekton1/tekton-pipelines.png)
+![Tekton Pipelines](/images/Tekton/1/tekton-pipelines.png)
 
 Dodatkowo możemy zweryfikować czy pody są w statusie **Running**
 
@@ -151,7 +151,7 @@ Utworzony został nowy zasób o nazwie **hello** by to zweryfikować możemy wyk
 kubectl get tasks
 ```
 
-![Tasks](/images/Tekton/Tekton1/tasks.png)
+![Tasks](/images/Tekton/1/tasks.png)
 
 Teraz pozostaje tylko uruchomić **Task**
 
@@ -167,7 +167,7 @@ tkn taskrun logs --last -f
 
 Rezultat
 
-![Hello](/images/Tekton/Tekton1/hello.png)
+![Hello](/images/Tekton/1/hello.png)
 
 Jak widać, wszystko działa!
 
