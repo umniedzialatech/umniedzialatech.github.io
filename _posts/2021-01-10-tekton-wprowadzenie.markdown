@@ -1,17 +1,21 @@
 ---
 layout: post
-title:  "Tekton - Cloud Native CI/CD"
+title:  "[1] Tekton - Cloud Native CI/CD"
 date:   2022-01-10 13:32:49 +0100
 categories: tekton
 ---
 {% include toc %}
-Tekton jest to narzędzie pozwalające na tworzenie pipelinów w środowisku cloud-native. Tekton funkcjonuje w środowisku Kubernetesowym. Bazuje na Kubernetes Custom Resource czyli na funkcjonalności pozwalającej na rozszerzenie możliwości istniejącego już Kubernetes API.
+
+[Część 2]({% post_url 2021-01-13-tekton-pipeline %})
+
+
+Tekton jest to narzędzie pozwalające na tworzenie pipelinów w środowisku cloud-native. Tekton funkcjonuje w środowisku Kubernetesowym. Bazuje na [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)  czyli na funkcjonalności pozwalającej na rozszerzenie możliwości istniejącego już Kubernetes API.
 
 # Co jest największą zaletą Tekton?
 
 **Reużywalność.** Tekton pozwala na tworzenie elementów które można dowolnie łączyć w ramach pipelinów.  Dzięki temu można w łatwy sposób szybko zbudować skomplikowany proces bez konieczności wynajdywania koła na nowo i budowania wszystkiego od zera.
 
-**Rozszerzalność.** Tekton cechuje się społecznością która z sukcesem tworzy kolejne rozszerzenia dzięki którym można przyspieszyć  prace używając już gotowych komponentów. Wszystko jest dostępne publicznie na [https://hub.tekton.dev/](https://hub.tekton.dev/)
+**Rozszerzalność.** Tekton cechuje się społecznością która z sukcesem tworzy kolejne dodatki dzięki którym można przyspieszyć prace używając już gotowych komponentów. Wszystko jest dostępne publicznie na [https://hub.tekton.dev/](https://hub.tekton.dev/)
 
 **Standaryzacja**. Tekton funkcjonuje jako rozszerzenie Kubernetosowe, więc może działać w ramach istniejącego klastra.
 
@@ -50,11 +54,11 @@ Tekton jest obecny w kilku produktach takich jak:
 - [Jenkins X](https://jenkins-x.io/)
 - [Google Cloud](https://cloud.google.com/tekton)
 
-Jak widać szeroka adaptacja tego projektu open source może dawać do zrozumienia, że w przyszłości możliwe jest, że stanie się standardem CI/CD w obszarze dostarczania oprogramowania. Warto nadmienić, że GitLab CI również rozważa umożliwienie tworzenia w ich środowisku tworzenie rozwiązań CI/CD z wykorzystaniem Tekton.  Zachęcam do przeczytania wątku na gitlab issues [Support Tekton pipeline definitions in GitLab](https://gitlab.com/gitlab-org/gitlab/-/issues/213360), w wątku pojawia się również Bitbucket jako konkurencja, może właśnie jesteśmy świadkami "wyścigu" kto pierwszy dostarczy ten feature ?
+Jak widać szeroka adaptacja tego projektu open source może dawać nadzieje, że w przyszłości możliwe jest, że stanie się standardem CI/CD w obszarze dostarczania oprogramowania. Warto nadmienić, że GitLab CI również rozważa umożliwienie tworzenia w ich środowisku tworzenie rozwiązań CI/CD z wykorzystaniem Tekton. <br>Zachęcam do przeczytania wątku na gitlab issues [Support Tekton pipeline definitions in GitLab](https://gitlab.com/gitlab-org/gitlab/-/issues/213360), pojawia się tam również Bitbucket jako konkurencja, może właśnie jesteśmy świadkami "wyścigu" kto pierwszy dostarczy ten feature ?
 
 ### Czym więc jest Tekton?
 
-Z mojej perspektywy jest to próba standaryzacji całego procesu tworzenia CI/CD co pozwoli na łatwiejsze i szybsze budowanie, dostarczanie oprogramowania. Biorąc pod uwagę, że największe firmy wyrażają swoje zainteresowanie może ma to szanse powodzenia?  Może budowanie pipelinów .etc ograniczy się do wykorzystania gotowych narzędzi które wszystko zrobią niemalże same?
+Z mojej perspektywy jest to próba standaryzacji całego procesu tworzenia CI/CD co pozwoli na łatwiejsze i szybsze budowanie, dostarczanie oprogramowania. Biorąc pod uwagę, że największe firmy wyrażają swoje zainteresowanie ma to szanse powodzenia? <br>Może budowanie pipelinów .etc ograniczy się do wykorzystania gotowych narzędzi które wszystko zrobią niemalże same?
 
 # Instalacja
 
