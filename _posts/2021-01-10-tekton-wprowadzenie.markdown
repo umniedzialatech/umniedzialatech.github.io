@@ -6,8 +6,6 @@ categories: tekton
 ---
 {% include toc %}
 
-[Część 2]({% post_url 2021-01-13-tekton-pipeline %})
-
 
 Tekton jest to narzędzie pozwalające na tworzenie pipelinów w środowisku cloud-native. Tekton funkcjonuje w środowisku Kubernetesowym. Bazuje na [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)  czyli na funkcjonalności pozwalającej na rozszerzenie możliwości istniejącego już Kubernetes API.
 
