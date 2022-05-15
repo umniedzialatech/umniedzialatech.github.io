@@ -14,7 +14,7 @@ By Tekton Dashboard był dostępny konieczne jest uruchomienie kilku prostych ko
 Pierwszą z nich jest:
 
 ```bash
-kubectl apply --filename https://github.com/tektoncd/dashboard/releases/latest/download/tekton-dashboard-release.yaml
+kubectl apply --filename hhttps://github.com/tektoncd/dashboard/releases/download/v0.26.0/tekton-dashboard-release.yaml
 ```
 
 Po chwili możemy potwierdzić, czy wszystko zostało zainstalowane uruchamiając kolejną komendę (wszystkie elementy powinny mieć status **Running**)**.**
@@ -51,18 +51,34 @@ Tekton Dashboard posiada opcje przeglądu w podstawowej wersji następujących e
 
 ![Tasks](/images/Tekton/3/tasks.png)
 
-- **TaskRuns** - wyświetla informacje o uruchomionych taskach
+- **TasksRuns** - wyświetla informacje o uruchomionych taskach
 
 ![TasksRuns](/images/Tekton/3/tasksruns.png)
-
+Po wejściu w daną instancje uruchomienia widoczne są szczegółowe informacje
+![TasksDetails](/images/Tekton/3/tasksrunsdetails.png)
 W ten sposób poznaliśmy podstawowe możliwość dostępne w Tekton Dashboard, ale jest jedna rzecz której mi osobiście brakuje - wizualizacji przepływów.
 
+# Namespace
+Uważne oko dostrzeże również w prawym górnym rogu możliwość wyboru **namespace**, czyli logicznego obszaru roboczego.<br>
+Domyślnie wybrany jest obszar “default” ale istnieje możliwość stworzenia kompletnie innego. <br>Dlaczego jest to ważne?<br>
+Pozwala to między innymi na, stworzenie namespace dla każdego środowiska (dev, test .etc).<br>
+Dodatkowo umożliwia również zaaplikowanie limitów związanych z zasobami np. Pody w danym namespace nie mogą mieć przydzielone więcej niż 256 MB pamięci.
+# ClusterTask vs Task
+Różnica jest bardzo prosta:
+
+**ClusterTask** - jest dostępny w ramach całego klastra
+
+**Task** - jest dostępny tylko w ramach danego namespace w którym został stworzony
+
+Do czego potencjalnie może to być użyteczne?
+
+Może ułatwić zarządzanie podstawowymi Taskami takimi jak np. git-clone.  <br>Gdy będzie wymagał aktualizacji odbędzie się ona w jednym miejscu co znacząco uprości i przyśpieszy proces.
 # Wizualizacja przepływów 
 
 Niestety nie udało mi się znaleźć tej funkcjonalności w Tekton Dashboard  a osobiście uważam ją za bardzo pomocną w zrozumieniu samego działania mechanizmu.
 
-Utworzone zostało [Github Issue](https://github.com/tektoncd/dashboard/issues/675), ostatnia aktywność jest z dnia 22.01.2021.
-
+Utworzone zostało [Github Issue](https://github.com/tektoncd/dashboard/issues/675), ostatnia aktywność jest z dnia 24.04.2022.<br>
+Została tam wymieniona min. funkcja dostepna w Tekton Pipelines by Red Hat - wizualizacja pipelineów.
 ## **Tekton Pipelines by Red Hat**
 
 Jest to narzędzie które pozwala na wizualizacje min. pipelineów.

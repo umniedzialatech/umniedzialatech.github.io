@@ -22,8 +22,7 @@ Elementy typu Pipeline w Tektonie opierają się na trzech głównych składowyc
 Oficjalna dokumentacja Tekton w obrazuje to w bardzo czytelny sposób na poniższej grafice.
 
 ![Obrazowe przedstawienie podstawowych elementów Tekton. Źródło: tekton.dev](/images/Tekton/2/pipeline.png)
-
-Obrazowe przedstawienie podstawowych elementów Tekton. Źródło: tekton.dev
+*Obrazowe przedstawienie podstawowych elementów Tekton. Źródło: tekton.dev*
 
 ## Input/Output
 
@@ -37,13 +36,12 @@ Są to zasoby Kubernetesowe, które reprezentują instancje, konkretnego uruchom
 kubectl get taskruns
 ```
 
-![Untitled](/images/Tekton/2/pipeline.png)
+![Untitled](/images/Tekton/2/taskruns.png)
 
 Poniżej zamieszczam tabelaryczne zestawienie wszystkich elementów dostępnych w Tekton.
 
 ![Elementy dostępne w Tekton. Źródło: tekton.dev](/images/Tekton/2/tektontable.png)
-
-Elementy dostępne w Tekton. Źródło: tekton.dev
+*Elementy dostępne w Tekton. Źródło: tekton.dev*
 
 # Budowa
 
