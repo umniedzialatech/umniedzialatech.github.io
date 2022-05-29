@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[3] Tekton - Dashboard"
-date:   2022-03-12 13:32:49 +0100
+date:   2022-05-22 13:32:49 +0100
 categories: tekton
 ---
 {% include toc %}
@@ -61,7 +61,7 @@ W ten sposób poznaliśmy podstawowe możliwość dostępne w Tekton Dashboard, 
 # Namespace
 Uważne oko dostrzeże również w prawym górnym rogu możliwość wyboru **namespace**, czyli logicznego obszaru roboczego.<br>
 Domyślnie wybrany jest obszar “default” ale istnieje możliwość stworzenia kompletnie innego. <br>Dlaczego jest to ważne?<br>
-Pozwala to między innymi na, stworzenie namespace dla każdego środowiska (dev, test .etc).<br>
+Pozwala to między innymi na, stworzenie namespace dla każdego środowiska (dev, test etc.).<br>
 Dodatkowo umożliwia również zaaplikowanie limitów związanych z zasobami np. Pody w danym namespace nie mogą mieć przydzielone więcej niż 256 MB pamięci.
 # ClusterTask vs Task
 Różnica jest bardzo prosta:

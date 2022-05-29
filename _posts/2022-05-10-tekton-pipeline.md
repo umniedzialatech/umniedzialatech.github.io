@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[2] Tekton - Pierwszy Pipeline"
-date:   2022-02-10 13:32:49 +0100
+date:   2022-05-10 13:32:49 +0100
 categories: tekton
 ---
 {% include toc %}

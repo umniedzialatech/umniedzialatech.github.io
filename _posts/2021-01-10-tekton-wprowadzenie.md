@@ -25,7 +25,7 @@ A jak widać powyżej, ta skalowalność nie jest bez znaczenia.
 
 Jak zawsze odpowiedź trzeba zacząć od "to zależy".
 
-Jeśli organizacja posiada wdrożonego Kubernetesa i wszelkie repozytoria kodu nie są hostowane na np. GitLab,  Github .etc wtedy Tekton może być (ale wcale nie musi, o czym dalej) dobrym rozwiązaniem. Jeśli jednak mówimy o repozytoriach które są trzymane na GitLab, GitHub wtedy jednak zwróciłbym uwagę na:
+Jeśli organizacja posiada wdrożonego Kubernetesa i wszelkie repozytoria kodu nie są hostowane na np. GitLab, Github etc. wtedy Tekton może być (ale wcale nie musi, o czym dalej) dobrym rozwiązaniem. Jeśli jednak mówimy o repozytoriach które są trzymane na GitLab, GitHub wtedy jednak zwróciłbym uwagę na:
 
 - [GitLab CI](https://docs.gitlab.com/ee/ci/index.html)
 - [Github Actions](https://github.com/features/actions)
@@ -54,7 +54,7 @@ Jak widać szeroka adaptacja tego projektu open source może dawać nadzieje, ż
 
 ### Czym więc jest Tekton?
 
-Z mojej perspektywy jest to próba standaryzacji całego procesu tworzenia CI/CD co pozwoli na łatwiejsze i szybsze budowanie, dostarczanie oprogramowania. Biorąc pod uwagę, że największe firmy wyrażają swoje zainteresowanie ma to szanse powodzenia? <br>Może budowanie pipelinów .etc ograniczy się do wykorzystania gotowych narzędzi które wszystko zrobią niemalże same?
+Z mojej perspektywy jest to próba standaryzacji całego procesu tworzenia CI/CD co pozwoli na łatwiejsze i szybsze budowanie, dostarczanie oprogramowania. Biorąc pod uwagę, że największe firmy wyrażają swoje zainteresowanie ma to szanse powodzenia? <br>Może budowanie pipelinów etc. ograniczy się do wykorzystania gotowych narzędzi które wszystko zrobią niemalże same?
 
 # Instalacja
 
