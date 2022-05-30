@@ -21,8 +21,7 @@ Elementy typu Pipeline w Tektonie opierają się na trzech głównych składowyc
 
 Oficjalna dokumentacja Tekton w obrazuje to w bardzo czytelny sposób na poniższej grafice.
 
-![Obrazowe przedstawienie podstawowych elementów Tekton. Źródło: tekton.dev](/images/Tekton/2/pipeline.png)
-*Obrazowe przedstawienie podstawowych elementów Tekton. Źródło: tekton.dev*
+{% include image.html url="/images/Tekton/2/pipeline.png" description="Obrazowe przedstawienie podstawowych elementów Tekton. Źródło: tekton.dev" %}
 
 ## Input/Output
 

@@ -34,6 +34,7 @@ plugins:
   - jekyll-remote-theme
 
 search_full_content: true
+read_time: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
